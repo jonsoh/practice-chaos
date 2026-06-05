@@ -43,7 +43,7 @@ function StackItem({ entry }) {
       transition={{ duration: 0.25 }}
       className="text-base"
     >
-      <motion.span ref={scope} className="inline-block">
+      <motion.span ref={scope} className="inline-block align-top">
         {entry.technique}
         <AnimatePresence>
           {entry.escalation && (

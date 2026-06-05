@@ -140,7 +140,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-6">
       <div className="w-full max-w-xl rounded-2xl shadow-xl bg-white">
         <div className="p-6 space-y-4">
           <h1 className="text-2xl font-bold text-center text-slate-900">

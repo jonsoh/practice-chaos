@@ -42,37 +42,49 @@
   }
 }
 
+:root {
+  --pc-shake-base: #1e293b;
+  --pc-shake-flash: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pc-shake-base: #e2e8f0;
+    --pc-shake-flash: #f87171;
+  }
+}
+
 @keyframes pc-shake-flash {
   0% {
     transform: translateX(0);
-    color: #1e293b;
+    color: var(--pc-shake-base);
   }
   10% {
     transform: translateX(-8px);
-    color: #dc2626;
+    color: var(--pc-shake-flash);
   }
   25% {
     transform: translateX(8px);
-    color: #dc2626;
+    color: var(--pc-shake-flash);
   }
   40% {
     transform: translateX(-6px);
-    color: #dc2626;
+    color: var(--pc-shake-flash);
   }
   55% {
     transform: translateX(6px);
-    color: #dc2626;
+    color: var(--pc-shake-flash);
   }
   70% {
     transform: translateX(-3px);
-    color: #1e293b;
+    color: var(--pc-shake-base);
   }
   85% {
     transform: translateX(3px);
   }
   100% {
     transform: translateX(0);
-    color: #1e293b;
+    color: var(--pc-shake-base);
   }
 }
 

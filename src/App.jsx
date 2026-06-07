@@ -120,7 +120,7 @@ function ActionButtons({ onWorse, onAdd, worseDisabled, addDisabled }) {
   return (
     <div className="flex gap-2">
       <button
-        className="w-full px-4 py-2 rounded-xl bg-slate-200 text-slate-900 font-medium hover:bg-slate-300 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-slate-200"
+        className="w-full px-4 py-2 rounded-xl bg-slate-200 text-slate-900 font-medium hover:bg-slate-300 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:disabled:hover:bg-slate-700"
         onClick={onWorse}
         disabled={worseDisabled}
         title={worseDisabled ? 'This is as bad as it gets!' : ''}
@@ -128,7 +128,7 @@ function ActionButtons({ onWorse, onAdd, worseDisabled, addDisabled }) {
         Make it Worse 😈
       </button>
       <button
-        className="w-full px-4 py-2 rounded-xl bg-slate-200 text-slate-900 font-medium hover:bg-slate-300 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-slate-200"
+        className="w-full px-4 py-2 rounded-xl bg-slate-200 text-slate-900 font-medium hover:bg-slate-300 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:disabled:hover:bg-slate-700"
         onClick={onAdd}
         disabled={addDisabled}
         title={addDisabled ? 'Really?' : ''}
@@ -143,12 +143,12 @@ function ResultCard({ piece, stack, verdict, roundId }) {
   return (
     <div
       key={roundId}
-      className="mt-4 p-4 bg-gray-100 rounded-xl space-y-2 pc-result-card"
+      className="mt-4 p-4 bg-slate-50 ring-1 ring-slate-200/70 rounded-xl space-y-2 pc-result-card dark:bg-slate-800/70 dark:ring-slate-700"
     >
-      <p className="text-lg font-semibold text-slate-900">
+      <p className="text-lg font-semibold text-slate-900 dark:text-slate-100">
         {piece ? `For "${piece}"...` : 'Your challenge...'}
       </p>
-      <ul className="list-disc pl-5 space-y-1 text-slate-800">
+      <ul className="list-disc pl-5 space-y-1 text-slate-800 dark:text-slate-200">
         {stack.map((entry) => (
           <StackItem key={entry.id} entry={entry} />
         ))}
@@ -156,7 +156,7 @@ function ResultCard({ piece, stack, verdict, roundId }) {
       {verdict && (
         <p
           key={verdict}
-          className="text-sm text-red-500 font-medium pc-verdict"
+          className="text-sm text-rose-600 font-medium pc-verdict dark:text-red-400"
         >
           🚨 {verdict}
         </p>
@@ -176,22 +176,22 @@ export default function App() {
     usedEscalations.length >= escalations.length || allEscalated
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-6">
-      <div className="w-full max-w-xl rounded-2xl shadow-xl bg-white">
+    <div className="min-h-screen bg-linear-to-br from-purple-500 via-pink-500 to-red-500 dark:from-indigo-950 dark:via-purple-950 dark:to-slate-950 flex items-center justify-center p-6">
+      <div className="w-full max-w-xl rounded-2xl bg-white/95 backdrop-blur-sm shadow-xl shadow-purple-900/10 ring-1 ring-black/5 dark:bg-slate-900 dark:shadow-purple-950/40 dark:ring-slate-800">
         <div className="p-6 space-y-4">
-          <h1 className="text-2xl font-bold text-center text-slate-900">
+          <h1 className="text-2xl font-bold text-center text-slate-900 dark:text-slate-100">
             Practice Chaos 🎵
           </h1>
 
           <input
-            className="w-full p-2 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            className="w-full p-2 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:ring-purple-500"
             placeholder="What piece are you practicing?"
             value={piece}
             onChange={(e) => setPiece(e.target.value)}
           />
 
           <button
-            className="w-full px-4 py-2 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors cursor-pointer"
+            className="w-full px-4 py-2 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors cursor-pointer dark:bg-purple-600 dark:hover:bg-purple-500"
             onClick={() => dispatch({ type: 'SPIN' })}
           >
             Spin for Chaos 🎲
@@ -217,7 +217,7 @@ export default function App() {
 
           {verdict && (
             <button
-              className="w-full px-4 py-2 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition-colors cursor-pointer"
+              className="w-full px-4 py-2 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition-colors cursor-pointer dark:bg-red-700 dark:hover:bg-red-600"
               onClick={() => dispatch({ type: 'RESET' })}
             >
               I Regret Everything 🙏

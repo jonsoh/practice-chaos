@@ -18,5 +18,5 @@ export const techniques = [
   "Play it like you're telling a secret",
   'Crescendo on every long note, whether it asks for it or not',
   'Play it like elevator music in a fancy hotel',
-  'Close your eyes for the whole thing',
+  'Close your eyes for the whole thing'
 ]

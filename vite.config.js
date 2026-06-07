@@ -6,5 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 // so all asset URLs need that prefix.
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/practice-chaos/',
+  base: '/practice-chaos/'
 })

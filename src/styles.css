@@ -1,1 +1,109 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@keyframes pc-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pc-card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pc-verdict-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pc-shake-flash {
+  0% {
+    transform: translateX(0);
+    color: #1e293b;
+  }
+  10% {
+    transform: translateX(-8px);
+    color: #dc2626;
+  }
+  25% {
+    transform: translateX(8px);
+    color: #dc2626;
+  }
+  40% {
+    transform: translateX(-6px);
+    color: #dc2626;
+  }
+  55% {
+    transform: translateX(6px);
+    color: #dc2626;
+  }
+  70% {
+    transform: translateX(-3px);
+    color: #1e293b;
+  }
+  85% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+    color: #1e293b;
+  }
+}
+
+.pc-stack-item {
+  animation: pc-slide-in-left 0.25s ease-out both;
+}
+
+.pc-escalation {
+  display: inline;
+  animation: pc-fade-in 0.4s ease-out both;
+}
+
+.pc-result-card {
+  animation: pc-card-in 0.25s ease-out both;
+}
+
+.pc-verdict {
+  animation: pc-verdict-in 0.25s ease-out both;
+}
+
+.pc-shake {
+  display: inline-block;
+  animation: pc-shake-flash 0.6s ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-stack-item,
+  .pc-escalation,
+  .pc-result-card,
+  .pc-verdict,
+  .pc-shake {
+    animation: none;
+  }
+}

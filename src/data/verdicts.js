@@ -12,5 +12,5 @@ export const verdicts = [
   'Even the dog left.',
   'Your hands have unionized and are demanding hazard pay.',
   'Future you will not remember this fondly.',
-  'A music critic just spontaneously combusted.',
+  'A music critic just spontaneously combusted.'
 ]

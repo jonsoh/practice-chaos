@@ -10,8 +10,8 @@ export const escalations = [
   '…and one person keeps clapping at the wrong moments',
   '…while a critic looks deeply unimpressed',
   "…and you're suddenly aware of your hands",
-  "…while a cat watches from across the room",
+  '…while a cat watches from across the room',
   '…while reconsidering your relationship with music',
   '…as if this is the last piece you will ever perform',
-  "…while wondering if anyone's actually listening",
+  "…while wondering if anyone's actually listening"
 ]

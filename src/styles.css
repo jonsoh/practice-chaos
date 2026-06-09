@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 
-@keyframes pc-slide-in-left {
+@theme {
+  --animate-slide-in: slide-in-left 0.25s ease-out both;
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-card-in: card-in 0.25s ease-out both;
+  --animate-verdict-in: verdict-in 0.25s ease-out both;
+  --animate-shake: shake-flash 0.6s ease-in-out both;
+}
+
+@keyframes slide-in-left {
   from {
     opacity: 0;
     transform: translateX(-20px);
@@ -11,7 +19,7 @@
   }
 }
 
-@keyframes pc-fade-in {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -20,7 +28,7 @@
   }
 }
 
-@keyframes pc-card-in {
+@keyframes card-in {
   from {
     opacity: 0;
     transform: scale(0.95) translateY(-8px);
@@ -31,7 +39,7 @@
   }
 }
 
-@keyframes pc-verdict-in {
+@keyframes verdict-in {
   from {
     opacity: 0;
     transform: translateY(-4px);
@@ -43,79 +51,47 @@
 }
 
 :root {
-  --pc-shake-base: #1e293b;
-  --pc-shake-flash: #dc2626;
+  --shake-base: #1e293b;
+  --shake-flash: #dc2626;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --pc-shake-base: #e2e8f0;
-    --pc-shake-flash: #f87171;
+    --shake-base: #e2e8f0;
+    --shake-flash: #f87171;
   }
 }
 
-@keyframes pc-shake-flash {
+@keyframes shake-flash {
   0% {
     transform: translateX(0);
-    color: var(--pc-shake-base);
+    color: var(--shake-base);
   }
   10% {
     transform: translateX(-8px);
-    color: var(--pc-shake-flash);
+    color: var(--shake-flash);
   }
   25% {
     transform: translateX(8px);
-    color: var(--pc-shake-flash);
+    color: var(--shake-flash);
   }
   40% {
     transform: translateX(-6px);
-    color: var(--pc-shake-flash);
+    color: var(--shake-flash);
   }
   55% {
     transform: translateX(6px);
-    color: var(--pc-shake-flash);
+    color: var(--shake-flash);
   }
   70% {
     transform: translateX(-3px);
-    color: var(--pc-shake-base);
+    color: var(--shake-base);
   }
   85% {
     transform: translateX(3px);
   }
   100% {
     transform: translateX(0);
-    color: var(--pc-shake-base);
-  }
-}
-
-.pc-stack-item {
-  animation: pc-slide-in-left 0.25s ease-out both;
-}
-
-.pc-escalation {
-  display: inline;
-  animation: pc-fade-in 0.4s ease-out both;
-}
-
-.pc-result-card {
-  animation: pc-card-in 0.25s ease-out both;
-}
-
-.pc-verdict {
-  animation: pc-verdict-in 0.25s ease-out both;
-}
-
-.pc-shake {
-  display: inline-block;
-  animation: pc-shake-flash 0.6s ease-in-out both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pc-stack-item,
-  .pc-escalation,
-  .pc-result-card,
-  .pc-verdict,
-  .pc-shake {
-    animation: none;
+    color: var(--shake-base);
   }
 }

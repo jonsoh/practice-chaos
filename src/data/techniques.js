@@ -1,4 +1,4 @@
-export const techniques = [
+export const techniques = Object.freeze([
   "Play everything staccato like you're sneaking around",
   'Exaggerate dynamics to absurd levels',
   'Double the tempo (good luck)',
@@ -19,4 +19,4 @@ export const techniques = [
   'Crescendo on every long note, whether it asks for it or not',
   'Play it like elevator music in a fancy hotel',
   'Close your eyes for the whole thing'
-]
+])

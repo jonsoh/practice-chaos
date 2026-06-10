@@ -26,33 +26,45 @@ export default function App() {
             Practice Chaos 🎵
           </h1>
 
-          <input
-            className="w-full p-2 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:ring-purple-500"
-            placeholder="What piece are you practicing?"
-            value={piece}
-            onChange={(e) => setPiece(e.target.value)}
-          />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault()
+              spin()
+            }}
+            className="space-y-4"
+          >
+            <label htmlFor="piece" className="sr-only">
+              What piece are you practicing?
+            </label>
+            <input
+              id="piece"
+              autoFocus
+              className="w-full p-2 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:ring-purple-500"
+              placeholder="What piece are you practicing?"
+              value={piece}
+              onChange={(e) => setPiece(e.target.value)}
+            />
 
-          <Button variant="primary" onClick={spin}>
-            Spin for Chaos 🎲
-          </Button>
+            <Button variant="primary" type="submit">
+              Spin for Chaos 🎲
+            </Button>
+          </form>
 
           {stack.length > 0 && (
-            <ActionButtons
-              onWorse={escalate}
-              onAdd={addAnother}
-              worseDisabled={noMoreEscalations}
-              addDisabled={noMoreTechniques}
-            />
-          )}
-
-          {stack.length > 0 && (
-            <ResultCard
-              piece={piece}
-              stack={stack}
-              verdict={verdict}
-              roundId={roundId}
-            />
+            <>
+              <ActionButtons
+                onWorse={escalate}
+                onAdd={addAnother}
+                worseDisabled={noMoreEscalations}
+                addDisabled={noMoreTechniques}
+              />
+              <ResultCard
+                piece={piece}
+                stack={stack}
+                verdict={verdict}
+                roundId={roundId}
+              />
+            </>
           )}
 
           {verdict && (

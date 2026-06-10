@@ -12,11 +12,13 @@ const BUTTON_VARIANTS = {
 
 export default function Button({
   variant = 'secondary',
+  type = 'button',
   className = '',
   ...props
 }) {
   return (
     <button
+      type={type}
       className={`${BUTTON_BASE} ${BUTTON_VARIANTS[variant]} ${className}`}
       {...props}
     />

@@ -20,13 +20,14 @@ function StackItem({ entry }) {
 }
 
 export default function ResultCard({ piece, stack, verdict, roundId }) {
+  const trimmedPiece = piece.trim()
   return (
     <div
       key={roundId}
       className="mt-4 p-4 bg-slate-50 ring-1 ring-slate-200/70 rounded-xl space-y-2 animate-card-in motion-reduce:animate-none dark:bg-slate-800/70 dark:ring-slate-700"
     >
       <p className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-        {piece ? `For "${piece}"...` : 'Your challenge...'}
+        {trimmedPiece ? `For "${trimmedPiece}"...` : 'Your challenge...'}
       </p>
       <ul className="list-disc pl-5 space-y-1 text-slate-800 dark:text-slate-200">
         {stack.map((entry) => (

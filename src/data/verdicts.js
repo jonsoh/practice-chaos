@@ -1,4 +1,4 @@
-export const verdicts = [
+export const verdicts = Object.freeze([
   'This has gone too far.',
   'Your teacher has left the room.',
   'This is no longer music, this is a cry for help.',
@@ -13,4 +13,4 @@ export const verdicts = [
   'Your hands have unionized and are demanding hazard pay.',
   'Future you will not remember this fondly.',
   'A music critic just spontaneously combusted.'
-]
+])

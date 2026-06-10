@@ -1,4 +1,4 @@
-export const escalations = [
+export const escalations = Object.freeze([
   "…but you're running out of time",
   '…and your teacher is judging you',
   "…like it's the final round of a reality show",
@@ -14,4 +14,4 @@ export const escalations = [
   '…while reconsidering your relationship with music',
   '…as if this is the last piece you will ever perform',
   "…while wondering if anyone's actually listening"
-]
+])

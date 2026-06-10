@@ -29,5 +29,11 @@ export default [
       ]
     }
   },
+  {
+    files: ['*.config.js'],
+    languageOptions: {
+      globals: globals.node
+    }
+  },
   prettier
 ]

@@ -8,6 +8,16 @@
   --animate-shake: shake-flash 0.6s ease-in-out both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animate-slide-in: none;
+    --animate-fade-in: none;
+    --animate-card-in: none;
+    --animate-verdict-in: none;
+    --animate-shake: none;
+  }
+}
+
 @keyframes slide-in-left {
   from {
     opacity: 0;
@@ -73,15 +83,12 @@
   }
   25% {
     transform: translateX(8px);
-    color: var(--shake-flash);
   }
   40% {
     transform: translateX(-6px);
-    color: var(--shake-flash);
   }
   55% {
     transform: translateX(6px);
-    color: var(--shake-flash);
   }
   70% {
     transform: translateX(-3px);
@@ -92,6 +99,5 @@
   }
   100% {
     transform: translateX(0);
-    color: var(--shake-base);
   }
 }
